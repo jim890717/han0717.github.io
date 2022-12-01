@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>HAN PhotoGraphy</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+  
+  <style>
+     #header{
+        padding-top: 1%;
+        height: 20%;
+        background-color: #1a1a1a;
+    }
+    body{
+        background-color: #000000;
+    }
+    
+    .selectLocation{
+      color:wheat;
+      position: relative;
+      /*
+      top: calc(55% - 250px);
+      left: calc(20% - 250px);*/
+      /*width: 40%;*/
+      height: 300px;
+      border-style: solid;
+      margin: 5%;
+      padding-left: 3%;
+      padding-top: 3%;
+    }
+    .drbtn{
+      
+      
+      position: absolute;
+      right: 70px;
+      bottom: 5px;
+
+      background-color: wheat;
+      border-color: black;
+      color: black;
+    }
+    .clbtn
+    {
+     
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      background-color: black;
+      border-color: wheat;
+      color: wheat;
+    }
+
+    .zhu {
+      position: relative;
+      /*
+      top: calc(55% - 250px);
+      left: calc(70% - 250px);*/
+      /*width: 500px;*/
+      height: 500px;
+      /*background: #cff;*/
+    }
+
+    .zhu .pan {
+      position: absolute;
+      top: calc(50% - 200px);
+      left: calc(50% - 200px);
+      width: 400px;
+      height: 400px;
+    }
+
+    .zhu .pan .wai {
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background: rgb(109, 108, 108);
+    }
+
+    .zhu .pan .wai::before {
+      content: '';
+      display: block;
+      width: 86%;
+      height: 86%;
+      border-radius: 100%;
+      position: absolute;
+      top: 7%;
+      left: 7%;
+      background-color: #fff;
+    }
+
+    .zhu .pan .wai span {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .zhu .pan .wai span::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      border-radius: 100%;
+      position: absolute;
+      top: 6px;
+      left: calc(50% - 8px);
+    }
+
+    .zhu .pan .wai span:nth-child(2n)::before {
+      width: 14px;
+      height: 14px;
+    }
+
+    .zhu .pan .wai span:nth-child(4n)::before {
+      background-color: #7c83f8;
+    }
+
+    .zhu .pan .wai span:nth-child(4n-1)::before {
+      background-color: #7efffd;
+    }
+
+    .zhu .pan .wai span:nth-child(4n-2)::before {
+      background-color: #fe7d00;
+    }
+
+    .zhu .pan .wai span:nth-child(4n-3)::before {
+      background-color: #e3ff2f;
+    }
+
+
+    /* 抽奖选项 */
+    .xuanxiang {
+      width: 80%;
+      height: 80%;
+      background-color: #fff;
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      border-radius: 100%;
+      overflow: hidden;
+      transition: all 5s;
+    }
+
+    .xuanxiang::after {
+      content: '';
+      display: block;
+      width: 50%;
+      height: 50%;
+      background-color: #fff;
+      position: absolute;
+      top: 25%;
+      left: 25%;
+      border-radius: 100%;
+      overflow: hidden;
+    }
+
+    .xuanxiang span {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .xuanxiang span::before {
+      content: '';
+      display: block;
+      width: 0px;
+      border: 40px solid transparent;
+      border-top-width: 160px;
+      border-top-style: solid;
+      position: absolute;
+      left: calc(50% - 40px);
+    }
+
+    .xuanxiang span:nth-child(2n-1)::before {
+      border-top-color: #FFF0D7
+    }
+
+    .xuanxiang span:nth-child(2n)::before {
+      border-top-color: #D7E0FF;
+    }
+
+    .xuanxiang span i {
+      display: block;
+      font-style: normal;
+      font-weight: bold;
+      color: black;
+      position: absolute;
+      left: calc(50% - 8px);
+      top: 2%;
+      width: 16px;
+      font-size: 16px;
+    }
+
+    /* 中心部位 */
+    .nei {
+      width: 34%;
+      height: 34%;
+      position: absolute;
+      top: 33%;
+      left: 33%;
+      border-radius: 100%;
+      background-color: #6f553e;
+      cursor: pointer;
+      z-index: 3;
+    }
+
+    .nei span {
+      display: block;
+      width: 100%;
+      padding-top: 20px;
+      color: rgb(255, 255, 255);
+      font-size: 32px;
+      text-align: center;
+      transition: .3s;
+    }
+
+    .nei:hover span {
+      color: #fff;
+      transition: .3s;
+    }
+
+    /* 选项锚 */
+    .mao {
+      width: 80%;
+      height: 80%;
+      position: absolute;
+      top: 8%;
+      left: 10%;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .mao::before {
+      content: '';
+      display: inline-block;
+      border: 10px solid transparent;
+      border-top: 18px solid #69f;
+    }
+
+    .north{
+      width: 18%;
+      float: left;
+    }
+    .east{
+      width: 18%;
+      float: left;
+    }
+    .south{
+      width: 18%;
+      float: left;
+    }
+    .west{
+      width: 18%;
+      float: left;
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+  <div id="header">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown link
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+</div>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center" style="margin-top: 7%;">
+      <div class="col-sm-12 col-md-6">
+        <div class="selectLocation" style="margin: 5%;">
+
+        </div>
+       
+      </div>
+      <div class="col-sm-12 col-md-6">
+        <div class="zhu">
+            <div class="pan">
+              <div class="wai"></div>
+              <div class="mao">
+              </div>
+              <div class="xuanxiang">
+                
+              </div>
+              <div class="nei">
+                <div class="huan">
+                  <span>今天<br />去哪玩</span>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+
+  <script>
+    //json 靜態資料庫
+
+    var locationData = [{
+      "place": "台北", "position": "north"
+    }, {
+      "place": "新北", "position": "north"
+    }, {
+      "place": "基隆", "position": "north"
+    }, {
+      "place": "桃園", "position": "north"
+    }, {
+      "place": "新竹", "position": "west"
+    }, {
+      "place": "苗栗", "position": "west"
+    }, {
+      "place": "台中", "position": "west"
+    }, {
+      "place": "彰化", "position": "west"
+    }, {
+      "place": "雲林", "position": "west"
+    }, {
+      "place": "南投", "position": "west"
+    }, {
+      "place": "嘉義", "position": "south"
+    }, {
+      "place": "台南", "position": "south"
+    }, {
+      "place": "高雄", "position": "south"
+    }, {
+      "place": "屏東", "position": "south"
+    }, {
+      "place": "宜蘭", "position": "east"
+    }, {
+      "place": "花蓮", "position": "east"
+    }, {
+      "place": "台東", "position": "east"
+    }
+    ];
+
+  </script>
+
+  <script>
+    init();
+    
+    var checkCount;
+    function init(){
+      var checkboxHtml = "";
+      checkCount=0;
+      var divplace="";
+      for (i = 0; i < locationData.length; i++) {
+        if(locationData[i].position!=divplace){
+          if(i!=0){
+            checkboxHtml+='</div>'
+          }
+          divplace=locationData[i].position;
+          checkboxHtml+='<div class="'+divplace+'">'
+        }
+        checkboxHtml += '<div class="form-check" ><input class="form-check-input" type="checkbox" value="' + locationData[i].place + '"><label class="form-check-label">' +
+        locationData[i].place + '</label></div>';
+
+      }
+      checkboxHtml+='</div><button class="drbtn btn btn-primary" id="draw">繪製</button><button class="clbtn btn btn-primary" id="clean">清除</button>'
+      $(".selectLocation").html(
+        checkboxHtml
+      );
+      $("#clean").click(function(){
+        init();
+        $(".xuanxiang").html(
+            ''
+        );
+        
+        });
+        $("#draw").click(function () {
+            console.log("draw");
+            var selectData = [];
+            $('.form-check-input').each(function () {
+            var sThisVal = (this.checked ? $(this).val() : "");
+            if (sThisVal != '') {
+                selectData.push(sThisVal);
+            }
+        });
+        $(".xuanxiang").html(
+            ''
+        );
+        $(".xuanxiang").css("transition-duration","500ms")
+        $(".xuanxiang").css("transform","rotate(0deg)")
+        
+        if (selectData.length > 0) {
+            drawRoulette(selectData);
+        }
+
+        });
+
+
+      $('input[type=checkbox]').change(function() {
+        
+        $(this).css("border-color","wheat")
+        $(this).css("color","wheat");
+        $(this).css("background-color","black");
+        if ($(this).is(':checked')) {
+         
+          checkCount++;
+          if(checkCount==12){
+           
+            $('.form-check-input').each(function () {
+            var sThisVal = (this.checked ? '' :  $(this));
+            if(sThisVal!=''){
+              sThisVal.attr("disabled",true);
+              test = sThisVal;
+            }
+            });
+           
+          }
+        } else {
+          checkCount--;
+          $('.form-check-input').each(function () {
+            var sThisVal = (this.checked ? '' :  $(this));
+            if(sThisVal!=''){
+              sThisVal.attr("disabled",false);
+              test = sThisVal;
+            }
+          });
+        }
+        if(checkCount==12){
+          alert("限制12個地區");
+        }
+
+      });
+    }
+    
+
+    
+    function drawRoulette(data) {
+      var RouletteItem = "";
+      if (data.length < 12) {
+        let len = 0;
+        for (i = 0; i < 12; i++) {
+
+          RouletteItem += '<span><i>' + data[len] + '</i></span>';
+          len++;
+          if (len >= data.length) {
+            len = 0;
+          }
+        }
+      } else {
+        for (i = 0; i < data.length; i++) {
+          RouletteItem += '<span><i>' + data[i] + '</i></span>';
+        }
+      }
+
+      $(".xuanxiang").html(
+        RouletteItem
+      );
+      //游戏项
+      (function ($) {
+        var r = 0;
+        $('.xuanxiang>span').each(function () {
+          $(this).css({
+            transform: 'rotate(' + r + 'deg)'
+          })
+          r = r + 30;
+        })
+      })(jQuery);
+
+      //游戏
+      (function ($) {
+        var btnGame = $('.nei');
+        if (btnGame.length < 1) return;
+        var a = $('.xuanxiang');
+        if (a.length < 1) return;
+        var rotate = 0;
+        btnGame.on('click', function () {
+          $(".xuanxiang").css("transition-duration","5s")
+          var num = Math.floor(Math.random() * 1800 + 360);
+         
+          rotate = rotate + num;
+          var yu = rotate % 60;
+          //if(yu>10 && yu<30) rotate-=20;
+          //if(yu>30 && yu<50) rotate+=20;
+          console.log(rotate%360)
+          a.css({
+            transform: 'rotate(' + rotate + 'deg)'
+          });
+          count = 5;
+          countDown(5);
+        });
+      })(jQuery);
+    }
+    // 設定秒數
+   
+    function countDown(count){
+      // 將秒數寫在指定元素中
+      console.log(count);
+      // 每次執行就減1
+      count -= 1;
+      var timmer;
+      clearTimeout()
+      // 當 count = 0 時跳轉頁面
+      if (count == 0){
+        console.log("finish")
+        clearTimeout(timmer)
+      }else{
+        timmer = setTimeout("countDown("+count+")",1000);
+      }
+      // 設定每秒執行1次
+      
+    }
+    // 執行 countDown
+    
+
+
+    //外框小点
+    (function ($) {
+      var wai = $('.wai');
+      if (wai.length < 1) return;
+      var html = '';
+      for (var i = 0; i < 24; i++) {
+        html += '<span></span>';
+      }
+      //wai.append(html);
+
+      var r = 0;
+      wai.children('span').each(function () {
+        $(this).css({
+          transform: 'rotate(' + r + 'deg)'
+        })
+        r = r + 15;
+      });
+    })(jQuery);
+  </script>
+</body>
+
+</html>
