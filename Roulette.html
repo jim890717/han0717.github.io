@@ -334,6 +334,7 @@
     .row>*{
       margin-top: 1%;
     }
+    
     /*
     .hum{
       
@@ -423,7 +424,8 @@
               <div class="locationDetail">
                 <div class="row align-items-center">
                   <div class="col-12">
-                    <span class="location" style="height:100px;margin-top: 10%;font-size: large;" id="areaImfomation">新北市   (12/08)</span>
+                    <span class="location" style="height:50px;margin-top: 10%;font-size: large;" id="areaImfomation">新北市   (12/08)</span>
+                    <span class="location" style="height:50px;margin-top: 10%;font-size: large;" id="DateTimeTxt">15:13</span>
                   </div>
                   
                   <div class="col-6">
@@ -450,8 +452,8 @@
             </div>
             <div class="col-4 col-sm-4 col-lg-3">
               <div class="todayDayTime">
-                <span class="daytxt">今天白天</span>
-                <span class="timetxt">12:00~18:00</span>
+                <span class="daytxt" id="firstDay">今天白天</span>
+                <span class="timetxt" id="firstTime">12:00~18:00</span>
                 <span class="wea" id="wea01">下雨</span>
                 <span class="tem" id="tem01">溫度</span>
                 <span class="hum"><i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-umbrella-fill" viewBox="0 0 16 16">
@@ -462,8 +464,8 @@
             </div>
             <div class="col-4 col-sm-4 col-lg-3">
               <div class="todayNight">
-                <span class="daytxt">今晚明晨</span>
-                <span class="timetxt">18:00~06:00</span>
+                <span class="daytxt" id="secondDay">今晚明晨</span>
+                <span class="timetxt" id="secondTime">18:00~06:00</span>
                 <span class="wea" id="wea02">下雨</span>
                 <span class="tem" id="tem02">溫度</span>
                 <span class="hum"><i><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-umbrella-fill" viewBox="0 0 16 16">
@@ -474,8 +476,8 @@
             </div>
             <div class="col-4 col-sm-4  col-lg-3">
               <div class="tomorrowDayTime">
-                <span class="daytxt">明天白天</span>
-                <span class="timetxt">18:00~06:00</span>
+                <span class="daytxt" id="thirdDay">明天白天</span>
+                <span class="timetxt" id="thirdTime">18:00~06:00</span>
                 <span class="wea" id="wea03">下雨</span>
                 <span class="tem" id="tem03">溫度</span>    
                             
@@ -656,10 +658,9 @@
           $("#hum02").text(" "+weather.records.location[0].weatherElement.filter(x=>x.elementName=='PoP')[0].time[1].parameter.parameterName+"%");
           $("#hum03").text(" "+weather.records.location[0].weatherElement.filter(x=>x.elementName=='PoP')[0].time[2].parameter.parameterName+"%");
           //$("#LocationView").modal("show");
-          $("#wea01").html('<img src="./pict/day/'+weather.records.location[0].weatherElement.filter(x=>x.elementName=='Wx')[0].time[0].parameter.parameterValue+'.svg" alt="" title="">');
-          $("#wea02").html('<img src="./pict/night/'+weather.records.location[0].weatherElement.filter(x=>x.elementName=='Wx')[0].time[1].parameter.parameterValue+'.svg" alt="" title="">');
-          $("#wea03").html('<img src="./pict/day/'+weather.records.location[0].weatherElement.filter(x=>x.elementName=='Wx')[0].time[2].parameter.parameterValue+'.svg" alt="" title="">');
-          
+          $("#wea01").html('<img width="99" height="77" src="./pict/day/'+weather.records.location[0].weatherElement.filter(x=>x.elementName=='Wx')[0].time[0].parameter.parameterValue+'.svg" alt="" title="">');
+          $("#wea02").html('<img width="99" height="77" src="./pict/night/'+weather.records.location[0].weatherElement.filter(x=>x.elementName=='Wx')[0].time[1].parameter.parameterValue+'.svg" alt="" title="">');
+          $("#wea03").html('<img width="99" height="77" src="./pict/day/'+weather.records.location[0].weatherElement.filter(x=>x.elementName=='Wx')[0].time[2].parameter.parameterValue+'.svg" alt="" title="">');
           
           var today = new Date().getFullYear()+"-";
           var todayTxt="";
@@ -698,7 +699,42 @@
               $("#sunrise").text(resa.records.locations.location[0].time[0].parameter.filter(x=>x.parameterName=='日出時刻')[0].parameterValue);
               $("#sundown").text(resa.records.locations.location[0].time[0].parameter.filter(x=>x.parameterName=='日沒時刻')[0].parameterValue);
               
+              if(new Date().getHours()==18){
+                if(new Date().getMinutes()>0 || Date().getSeconds()>0){
+                  $("#firstDay").text("今晚明晨")
+                  $("#secondDay").text("明天白天")
+                  $("#thirdDay").text("明天晚上")             
+                  $("#firstTime").text("18:00"+"~"+"06:00");
+                  $("#secondTime").text("06:00"+"~"+"18:00");
+                  $("#thirdTime").text("18:00"+"~"+"06:00");
+                }else{
+                  $("#firstDay").text("今天白天")
+                  $("#secondDay").text("今晚明晨")
+                  $("#thirdDay").text("明天白天")
+                  $("#firstTime").text("06:00"+"~"+"18:00");
+                  $("#secondTime").text("18:00"+"~"+"06:00");
+                  $("#thirdTime").text("06:00"+"~"+"18:00");
+                }
+              }else{
+                if(new Date().getHours()>18){
+                  $("#firstDay").text("今晚明晨")
+                  $("#secondDay").text("明天白天")
+                  $("#thirdDay").text("明天晚上")
+                  $("#firstTime").text("18:00"+"~"+"06:00");
+                  $("#secondTime").text("06:00"+"~"+"18:00");
+                  $("#thirdTime").text("18:00"+"~"+"06:00");
+                }else{
+                  $("#firstDay").text("今天白天")
+                  $("#secondDay").text("今晚明晨")
+                  $("#thirdDay").text("明天白天")
+                  $("#firstTime").text("06:00"+"~"+"18:00");
+                  $("#secondTime").text("18:00"+"~"+"06:00");
+                  $("#thirdTime").text("06:00"+"~"+"18:00");
+                }
+              }
               
+              
+              DateTimeLoading();
               $("#LocationView").modal("show");
             },
             error:function(err){console.log(err)},
@@ -709,6 +745,32 @@
       });
 
     }
+
+    function DateTimeLoading(){
+      if((new Date().getHours())>=10){
+        hour=(new Date().getHours())      
+      }else{
+        hour="0"+(new Date().getHours())
+      }
+      if((new Date().getMinutes())>=10){
+        minute=(new Date().getMinutes())      
+      }else{
+        minute="0"+(new Date().getMinutes())
+      }
+      if(new Date().getSeconds()>=10){
+        second=(new Date().getSeconds())
+      }else{
+        second="0"+(new Date().getSeconds())
+      }
+
+
+      $("#DateTimeTxt").text(hour+":"+minute+":"+second);
+      clearTimeout()
+      setTimeout("DateTimeLoading()",1000);
+      
+    }
+
+
     var checkCount;
     function init(){
       var checkboxHtml = "";
