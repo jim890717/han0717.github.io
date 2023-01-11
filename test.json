@@ -1,0 +1,20 @@
+[{
+    "area":"newTaipei",
+    "name":"HH冰室",
+    "region":"淡水區",
+    "pictPath":"./pict/coffee/NewTaipei/5.jpg",
+    "location":"新北市淡水區中正路233-2號",        
+    "location_href":"https://goo.gl/maps/4L5kzARYC3xgsP8X9",
+    "date":"平日 13:30-19:00|六日 12:00-20:00",
+    "detailText":""
+},
+{
+    "area":"newTaipei",
+    "name":"Ancre café",
+    "region":"淡水區",
+    "pictPath":"./pict/coffee/NewTaipei/6.jpg",
+    "location":"新北市淡水區中正路233-3號2樓",        
+    "location_href":"https://goo.gl/maps/VkmrLnxLZFNLD2YL7",
+    "date":"平日 13:30-19:00|六日 12:00-20:00",
+    "detailText":""
+}]

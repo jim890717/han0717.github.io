@@ -168,5 +168,66 @@ var foodData=
         "date":"每日 11:00-20:00",
         "detailText":""
     },
+    {
+        "area":"Taipei",
+        "name":"Tzubi Park Project",
+        "region":"內湖區",
+        "pictPath":"./pict/coffee/Taipei/15.jpg",
+        "location":"台北市內湖區114新湖二路259巷7號",        
+        "location_href":"https://goo.gl/maps/9HSJVWBdt2tKMW72A",
+        "date":"每日 10:00-18:00",
+        "detailText":""
+    },
+    {
+        "area":"newTaipei",
+        "name":"Le Coq 公雞咖啡",
+        "region":"三芝區",
+        "pictPath":"./pict/coffee/NewTaipei/2.jpg",
+        "location":"新北市三芝區北勢子45-16號",        
+        "location_href":"https://goo.gl/maps/PUJtV4DhEAAjKqdg7",
+        "date":"每日 11:00-20:00|三公休",
+        "detailText":""
+    },
+    {
+        "area":"newTaipei",
+        "name":"我們在海邊",
+        "region":"三芝區",
+        "pictPath":"./pict/coffee/NewTaipei/3.jpg",
+        "location":"新北市三芝區北勢子12-1號",        
+        "location_href":"https://goo.gl/maps/7no4bK5eXRCwAFaC8",
+        "date":"每日 11:00-18:00|四公休",
+        "detailText":""
+    },
+    {
+        "area":"newTaipei",
+        "name":"淡水長堤 LB Cafe",
+        "region":"淡水區",
+        "pictPath":"./pict/coffee/NewTaipei/4.jpg",
+        "location":"新北市淡水區中正路21巷9號",        
+        "location_href":"https://goo.gl/maps/dgMAdEQXs42fXvVw7",
+        "date":"平日 11:00-22:00|六日 11:00-23:00",
+        "detailText":""
+    },
+    {
+        "area":"newTaipei",
+        "name":"HH冰室",
+        "region":"淡水區",
+        "pictPath":"./pict/coffee/NewTaipei/5.jpg",
+        "location":"新北市淡水區中正路233-2號",        
+        "location_href":"https://goo.gl/maps/4L5kzARYC3xgsP8X9",
+        "date":"平日 13:30-19:00|六日 12:00-20:00",
+        "detailText":""
+    },
+    {
+        "area":"newTaipei",
+        "name":"Ancre café",
+        "region":"淡水區",
+        "pictPath":"./pict/coffee/NewTaipei/6.jpg",
+        "location":"新北市淡水區中正路233-3號2樓",        
+        "location_href":"https://goo.gl/maps/VkmrLnxLZFNLD2YL7",
+        "date":"平日 13:30-19:00|六日 12:00-20:00",
+        "detailText":""
+    }
+    
 
 ]
