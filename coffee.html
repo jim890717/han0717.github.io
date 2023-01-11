@@ -23,6 +23,10 @@
       font-size: 14px;
       font-family: Comic Sans MS
     }
+    h4{
+      font-family: Comic Sans MS;
+      display : inline-block
+    }
 
   </style>
   
@@ -82,8 +86,18 @@
     </div>
   </section>
   
+  
   <div class="album py-5 bg-light">
     <div class="container">
+      <a data-bs-toggle="collapse" href="#collapseTaipei" style="text-decoration:none;color:black;" onclick="iconExpand('pei')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16"  id="taipeiDown">
+          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16" id="taipeiClose" style="display: none">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+      </a>
+      <!--<h4 ><a data-bs-toggle="collapse" href="#collapseTaipei" style="text-decoration:none;color:black;">台北市</a></h4>-->
       <h4>台北市</h4>
       <div class="btn-group-sm" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="taipei_radio btn-check" name="btnradio" id="btnradio0" data-ref="全部" autocomplete="off" checked>
@@ -114,13 +128,23 @@
         <label class="btn btn-outline-dark" for="btnradio12">文山區</label>        
       </div>
       <hr>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="taipeiList">
-        
+      <div class="collapse show" id="collapseTaipei">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="taipeiList">
+          
+        </div>
       </div>
     </div>
   </div>
   <div class="album py-5 bg-light">
     <div class="container">
+      <a data-bs-toggle="collapse" href="#collapseNewTaipei" style="text-decoration:none;color:black;" onclick="iconExpand('newpei')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16"  id="ntaipeiDown">
+          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16" id="ntaipeiClose" style="display: none">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+      </a>
       <h4>新北市</h4>
       <div class="btn-group-sm" role="group" aria-label="Basic radio toggle button group">
         <input type="radio" class="Newtaipei_radio btn-check" name="nbtnradio" id="nbtnradio0" data-ref="全部" autocomplete="off" checked>
@@ -186,28 +210,50 @@
         <input type="radio" class="Newtaipei_radio btn-check" name="nbtnradio" id="nbtnradio13" data-ref="烏來區" autocomplete="off">
         <label class="btn btn-outline-dark" for="nbtnradio13">烏來區</label>
       </div>
-      <hr>      
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="newTaipeiList">
-        
+      <hr>
+      <div class="collapse show" id="collapseNewTaipei">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="newTaipeiList">
+          
+        </div>
       </div>
     </div>
   </div>
   <div class="album py-5 bg-light">
     <div class="container">
+      <a data-bs-toggle="collapse" href="#collapseTaichung" style="text-decoration:none;color:black;" onclick="iconExpand('chung')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16"  id="chungDown">
+          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16" id="chungClose" style="display: none">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+      </a>
       <h4>台中市</h4>
-      <hr>      
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="taiChungList">
-        
+      <hr>
+      <div class="collapse show" id="collapseTaichung">   
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="taiChungList">
+          
+        </div>
       </div>
     </div>
   </div>
   <div class="album py-5 bg-light">
     <div class="container">
+      <a data-bs-toggle="collapse" href="#collapseTainan" style="text-decoration:none;color:black;" onclick="iconExpand('nan')">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16"  id="nanDown">
+          <path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16" id="nanClose" style="display: none">
+          <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+        </svg>
+      </a>
       <h4>台南市</h4>
-      <hr>      
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="tainainList">
-        
-      </div>
+      <hr>
+      <div class="collapse show" id="collapseTainan">  
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" id="tainainList">
+          
+        </div>
+      </div>  
     </div>
   </div>
   
@@ -295,6 +341,7 @@
   DrawList();
   filterBtn();
   addStore();
+ 
   function DrawList(){
     //taipei
     let htmlstr = '';
@@ -328,6 +375,7 @@
         '</p><p class="card-text">📍'+'<a href="'+foodData.filter(x=>x.area=='tainan')[i].location_href+'" target="_blank" style="text-decoration:none;color:black;">'+foodData.filter(x=>x.area=='tainan')[i].location+'</a></p></div></div></div>';
     }
     $("#tainainList").html(htmlstr);
+   
   }
   
   function filterBtn(){
@@ -400,6 +448,61 @@
     var copyText = document.getElementById("readJson");
     navigator.clipboard.writeText(copyText.innerHTML);
     $("#jsonStoreData").modal("hide");     
+  }
+
+  var tCount=1;
+  var ntCount=1;
+  var cCount=1;
+  var nCount=1;
+  function iconExpand(type){
+    //taipei
+    if(type=="pei"){
+      if(tCount==1){  
+        tCount=0;
+        $("#taipeiClose").show();
+        $("#taipeiDown").hide();     
+      }else{
+        tCount=1;
+        $("#taipeiDown").show();
+        $("#taipeiClose").hide();
+      }
+    }
+    else if(type=="newpei"){ //newTaipei
+      if(ntCount==1){  
+        ntCount=0;
+        $("#ntaipeiClose").show();
+        $("#ntaipeiDown").hide();     
+      }else{
+        ntCount=1;
+        $("#ntaipeiDown").show();
+        $("#ntaipeiClose").hide();
+      }
+    }
+    else if(type=="chung"){ //TaiChung
+      if(cCount==1){  
+        cCount=0;
+        $("#chungClose").show();
+        $("#chungDown").hide();     
+      }else{
+        cCount=1;
+        $("#chungDown").show();
+        $("#chungClose").hide();
+      }
+    }
+    else if(type=="nan"){ //Tainan
+      if(nCount==1){  
+        nCount=0;
+        $("#nanClose").show();
+        $("#nanDown").hide();     
+      }else{
+        nCount=1;
+        $("#nanDown").show();
+        $("#nanClose").hide();
+      }
+    }
+    
+    
+    
   }
 </script>
 </body>
