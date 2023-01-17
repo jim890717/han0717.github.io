@@ -70,15 +70,33 @@ var foodData=
         "location_href":"https://goo.gl/maps/x5nGXTndHpwgbLm1A",
         "date":"每日 09:00-19:00",
         "detailText":""
+    },{
+        "area":"taichung",
+        "name":"鹿雅森林(薩摩耶、夜景餐廳)",
+        "region":"沙鹿區",
+        "pictPath":"./pict/coffee/TaiChung/2.jpg",
+        "location":"中市沙鹿區臺灣大道七段346巷302號",        
+        "location_href":"https://goo.gl/maps/HfVo4BVjFBC5V7AB6",
+        "date":"每日 14:00-00:00|週二、三公休",
+        "detailText":""
     },
     {
         "area":"tainan",
-        "name":"Mr.Z 烘焙小棧 (蛋塔、布丁)",
+        "name":"京美人甘味屋",
         "region":"中西區",
         "pictPath":"./pict/coffee/Tainan/1.jpg",
-        "location":"台南市中西區海安路二段118號",        
-        "location_href":"https://goo.gl/maps/xW2CXjFiwpNjbQQh6",
-        "date":"12:00-21:00｜週三、四休",
+        "location":"台南市中西區中正路271巷11號",        
+        "location_href":"https://goo.gl/maps/MfpFcqHbSUkNZtAc9",
+        "date":"11:00-19:00｜週二、三休",
+        "detailText":""
+    },{
+        "area":"tainan",
+        "name":"都在貓咪旅館",
+        "region":"中西區",
+        "pictPath":"./pict/coffee/Tainan/2.jpg",
+        "location":"台南市中西區民族路三段218號3樓",        
+        "location_href":"https://goo.gl/maps/Bz7GmFWFTEjoAHut5",
+        "date":"11:00-21:00｜週二休",
         "detailText":""
     },
     {
@@ -176,6 +194,15 @@ var foodData=
         "location":"台北市內湖區114新湖二路259巷7號",        
         "location_href":"https://goo.gl/maps/9HSJVWBdt2tKMW72A",
         "date":"每日 10:00-18:00",
+        "detailText":""
+    },{
+        "area":"Taipei",
+        "name":"芋艿川",
+        "region":"內湖區",
+        "pictPath":"./pict/coffee/Taipei/16.jpg",
+        "location":"台北市內湖區江南街71巷65弄15號",        
+        "location_href":"https://goo.gl/maps/p9uqExrZKUJn6VWV8",
+        "date":"每日 12:00-21:00",
         "detailText":""
     },
     {
