@@ -205,6 +205,7 @@ var foodData=
         "date":"每日 12:00-21:00",
         "detailText":""
     },
+    /*
     {
         "area":"newTaipei",
         "name":"Le Coq 公雞咖啡",
@@ -214,7 +215,7 @@ var foodData=
         "location_href":"https://goo.gl/maps/PUJtV4DhEAAjKqdg7",
         "date":"每日 11:00-20:00|三公休",
         "detailText":""
-    },
+    },*/
     {
         "area":"newTaipei",
         "name":"我們在海邊",
