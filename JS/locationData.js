@@ -130,6 +130,7 @@ var locationData = [{
   init();
  
   var weather;
+  var sun;
   function ajaxTest(area){
     $.ajax({
       url:"https://opendata.cwb.gov.tw/api/v1/rest/datastore/F-C0032-001?Authorization=CWB-7AE3D081-CC8D-4245-B59B-F16F973A74FF&format=JSON&locationName="+area+"",
@@ -189,9 +190,10 @@ var locationData = [{
           method:"get",
           dataType:"JSON",
           success:function(resa){
+            sun = resa
             $("#areaImfomation").text(area+"  ("+todayTxt+")");
-            $("#sunrise").text(resa.records.locations.location[0].time[0].parameter.filter(x=>x.parameterName=='日出時刻')[0].parameterValue);
-            $("#sundown").text(resa.records.locations.location[0].time[0].parameter.filter(x=>x.parameterName=='日沒時刻')[0].parameterValue);
+            $("#sunrise").text(resa.records.locations.location.filter(x=>x.CountyName==area)[0].time[0].SunRiseTime);
+            $("#sundown").text(resa.records.locations.location.filter(x=>x.CountyName==area)[0].time[0].SunSetTime);
             
             if(new Date().getHours()==18){
               if(new Date().getMinutes()>0 || Date().getSeconds()>0){
@@ -226,7 +228,6 @@ var locationData = [{
                 $("#thirdTime").text("06:00"+"~"+"18:00");
               }
             }
-            
             
             DateTimeLoading();
             $("#LocationView").modal("show");
